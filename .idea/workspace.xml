@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a8d879de-13b1-4396-9736-f22ae7a94232" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lijiantao/controller/JobFindServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lijiantao/controller/JobFindServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/lijiantao/controller/EmployeeAddServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-320">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="70">
+              <caret line="41" column="21" lean-forward="true" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -209,7 +208,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -513,12 +512,20 @@
       <workItem from="1560659070132" duration="391000" />
       <workItem from="1560660603953" duration="2946000" />
       <workItem from="1560679285163" duration="10000" />
-      <workItem from="1560680538148" duration="745000" />
+      <workItem from="1560680538148" duration="793000" />
     </task>
+    <task id="LOCAL-00001" summary="zuixin">
+      <created>1560684038525</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560684038525</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31704000" />
+    <option name="totallyTimeSpent" value="31752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -543,7 +550,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8118741" visible="true" weight="0.37831324" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8118741" weight="0.37831324" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.823319" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -569,6 +576,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="zuixin" />
+    <option name="LAST_COMMIT_MESSAGE" value="zuixin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -901,8 +912,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lijiantao/controller/EmployeeAddServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-320">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="70">
+          <caret line="41" column="21" lean-forward="true" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
