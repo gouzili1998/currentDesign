@@ -32,10 +32,10 @@ public class EmployeeService {
         EmployeeDao employeeDao=new EmployeeDao();
         return employeeDao.findAllEmployees();
     }
-    public int deleteEmployee(int id){
+    public int deleteEmployee(List<Integer> idList){
         int result=0;
         EmployeeDao employeeDao=new EmployeeDao();
-        return employeeDao.deleteEmployee(id);
+        return employeeDao.deleteEmployee(idList);
     }
 
 }

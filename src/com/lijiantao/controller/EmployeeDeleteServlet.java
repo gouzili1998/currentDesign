@@ -1,5 +1,6 @@
 package com.lijiantao.controller;
 
+import com.alibaba.fastjson.JSONArray;
 import com.lijiantao.VO.ResultVO;
 import com.lijiantao.service.EmployeeService;
 
@@ -8,8 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet(value = "/deleteEmployee")
 public class EmployeeDeleteServlet extends HttpServlet {
@@ -22,9 +26,15 @@ public class EmployeeDeleteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
-        String id=req.getParameter("id");
+        BufferedReader reader=new BufferedReader(new InputStreamReader(req.getInputStream()));
+        String line=null;
+        List<Integer> idList=null;
+        while((line=reader.readLine())!=null){
+            idList= JSONArray.parseArray(line,Integer.class);
+        }
         EmployeeService employeeService=new EmployeeService();
-        int result=employeeService.deleteEmployee(Integer.parseInt(id));
+        int result=employeeService.deleteEmployee(idList);
+
         ResultVO resultVO=new ResultVO();
         resultVO.setCode(300);
         resultVO.setMsg("成功");

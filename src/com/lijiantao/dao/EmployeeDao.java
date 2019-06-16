@@ -91,15 +91,17 @@ public class EmployeeDao {
         return list;
 
     }
-    public int deleteEmployee(int id){
+    public int deleteEmployee(List<Integer> idList){
         DBUtil dbUtil=DBUtil.getInstance();
         Connection conn= null;
         PreparedStatement ps=null;
         ResultSet rs=null;
         int result=0;
+        String str=idList.toString();
+        String substr=str.substring(1,str.length()-1);
         try {
             conn=dbUtil.getConnection();
-            ps=conn.prepareStatement("delete from employee where id="+id);
+            ps=conn.prepareStatement("delete from employee where id in("+substr+")");
             result=ps.executeUpdate();
 
 
