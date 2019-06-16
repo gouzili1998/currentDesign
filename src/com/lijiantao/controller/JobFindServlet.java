@@ -31,6 +31,7 @@ public class JobFindServlet extends HttpServlet {
         String json= JSON.toJSONString(resultVO);
         PrintWriter pw=resp.getWriter();
         pw.write(json);
+        pw.flush();
     }
 
     @Override
