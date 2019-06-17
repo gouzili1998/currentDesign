@@ -25,7 +25,9 @@ public class JobAddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
-        Job job=new Job(3,"产品部");
+        int id=Integer.parseInt(req.getParameter("id"));
+        String name=req.getParameter("name");
+        Job job=new Job(id,name);
         JobService jobService=new JobService();
         int result=jobService.addJob(job);
         JSONObject jsonObject=new JSONObject();

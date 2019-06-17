@@ -25,7 +25,11 @@ public class PayLevelAddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
-        PayLevel payLevel=new PayLevel(6,"六级工资",15000);
+        int id=Integer.parseInt(req.getParameter("id"));
+        String name=req.getParameter("name");
+        double basePay=Double.parseDouble(req.getParameter("basePay"));
+
+        PayLevel payLevel=new PayLevel(id,name,basePay);
         PayLevelService payLevelService=new PayLevelService();
         int result=payLevelService.addPayLevel(payLevel);
         JSONObject jsonObject=new JSONObject();
