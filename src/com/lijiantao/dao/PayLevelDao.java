@@ -1,5 +1,6 @@
 package com.lijiantao.dao;
 
+import com.lijiantao.entity.Employee;
 import com.lijiantao.entity.Job;
 import com.lijiantao.entity.PayLevel;
 import com.lijiantao.util.DBUtil;
@@ -147,6 +148,38 @@ public class PayLevelDao {
 
         }
         return id;
+
+    }
+    public int editPayLevel(PayLevel payLevel){
+        DBUtil dbUtil=DBUtil.getInstance();
+        PreparedStatement ps=null;
+        Connection conn= null;
+        int result=0;
+        try {
+            conn = dbUtil.getConnection();
+            ps=conn.prepareStatement("update pay_level set name=?,base_pay=? where id=?");
+
+            ps.setString(1,payLevel.getName());
+            ps.setDouble(2,payLevel.getBasePay());
+            ps.setInt(3,payLevel.getId());
+            result=ps.executeUpdate();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if(null!=ps||!ps.isClosed()){
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            dbUtil.closeConnection();
+            return result;
+        }
+
 
     }
 }

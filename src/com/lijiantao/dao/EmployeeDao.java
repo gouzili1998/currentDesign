@@ -91,20 +91,17 @@ public class EmployeeDao {
         return list;
 
     }
-    public int deleteEmployee(List<Integer> idList){
+    public int deleteEmployee(int id){
         DBUtil dbUtil=DBUtil.getInstance();
         Connection conn= null;
         PreparedStatement ps=null;
         ResultSet rs=null;
         int result=0;
-        String str=idList.toString();
-        String substr=str.substring(1,str.length()-1);
         try {
             conn=dbUtil.getConnection();
-            ps=conn.prepareStatement("delete from employee where id in("+substr+")");
+            ps=conn.prepareStatement("delete from employee where id = ?");
+            ps.setInt(1,id);
             result=ps.executeUpdate();
-
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -122,5 +119,38 @@ public class EmployeeDao {
 
         }
         return result;
+    }
+    public int editEmployee(Employee employee){
+        DBUtil dbUtil=DBUtil.getInstance();
+        PreparedStatement ps=null;
+        Connection conn= null;
+        int result=0;
+        try {
+            conn = dbUtil.getConnection();
+            ps=conn.prepareStatement("update employee set name=?,job_id=?,level_id=? where id=?");
+
+            ps.setString(1,employee.getName());
+            ps.setInt(2,employee.getJobId());
+            ps.setInt(3,employee.getPayId());
+            ps.setInt(4,employee.getId());
+            result=ps.executeUpdate();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if(null!=ps||!ps.isClosed()){
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            dbUtil.closeConnection();
+            return result;
+        }
+
+
     }
 }

@@ -19,8 +19,11 @@ public class JobService {
 
 
     }
+    public int editJob(Job job){
+        JobDao jobDao=new JobDao();
+        return jobDao.editJob(job);
+    }
     public int deleteJob(int id){
-        int result=0;
         JobDao jobDao=new JobDao();
         return jobDao.deleteJob(id);
     }

@@ -53,6 +53,35 @@ public class JobDao {
         return list;
 
     }
+    public int editJob(Job job){
+        DBUtil dbUtil=DBUtil.getInstance();
+        PreparedStatement ps=null;
+        Connection conn= null;
+        int result=0;
+        try {
+            conn = dbUtil.getConnection();
+            ps=conn.prepareStatement("update job set name=? where id=?");
+
+            ps.setString(1,job.getName());
+            ps.setInt(2,job.getId());
+            result=ps.executeUpdate();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if(null!=ps||!ps.isClosed()){
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            dbUtil.closeConnection();
+            return result;
+        }
+    }
     public int addJob(Job job){
         DBUtil dbUtil=DBUtil.getInstance();
         PreparedStatement ps=null;

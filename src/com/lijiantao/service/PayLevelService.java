@@ -28,4 +28,8 @@ public class PayLevelService {
         PayLevelDao payLevelDao=new PayLevelDao();
         return payLevelDao.findPayIdByPayName(name);
     }
+    public int editPayLevel(PayLevel payLevel){
+        PayLevelDao payLevelDao=new PayLevelDao();
+        return payLevelDao.editPayLevel(payLevel);
+    }
 }
